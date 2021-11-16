@@ -1,0 +1,5 @@
+git_repos/
+__pycache__/
+.snakemake/
+logs/
+results/
