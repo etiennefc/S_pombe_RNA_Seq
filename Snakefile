@@ -12,7 +12,7 @@ include: "rules/DESeq2.smk"
 include: "rules/df_formatting.smk"
 include: "rules/figures.smk"
 include: "rules/ratio_stress_normal.smk"
-
+include: "rules/fastq_extraction.smk"
 
 rule all:
     input:
@@ -34,14 +34,16 @@ rule all:
         deseq_formated_stress_normal = os.path.join(config['path']['deseq_output'],
                         'sla1_IP_stress_normal/'),
         volcano_output_dir = os.path.join(config['figure']['volcano'], 'deseq/'),
-        figures = get_figures_path(config)
+        figures = get_figures_path(config),
+	yAS113_df = os.path.join(config['path']['extract_read_type'], 'yAS113_avg_normalized_df.tsv')
 
 
 rule all_downloads:
     input:
         reference_genome = config['path']['reference_genome'],
         genome_gff = config['path']['genome_gff'],
-        coco_git = 'git_repos/coco'
+        coco_git = 'git_repos/coco',
+        git_agrep_folder = 'git_repos/agrep'	
 
 
 

@@ -32,10 +32,16 @@
     "yAS113_2": "VS29",
     "yAS113_3": "VS30"
   },
-  "sample_ids": ["KO_1_R1", "KO_1_R2", "KO_2_R1", "KO_2_R2", "KO_3_R1", "KO_3_R2",
-                  "MLP1_IP_1_R1", "MLP1_IP_1_R2", "MLP1_IP_2_R1", "MLP1_IP_2_R2",
-                  "MLP1_IP_3_R1", "MLP1_IP_3_R2", "WT_1_R1", "WT_1_R2", "WT_2_R1",
-                  "WT_2_R2","WT_3_R1", "WT_3_R2"],
+  "sample_ids": ["Normal_input_1_R1", "Normal_input_1_R2", "Normal_input_2_R1", "Normal_input_2_R2", "Normal_input_3_R1", "Normal_input_3_R2",
+                  "Normal_IP_1_R1", "Normal_IP_1_R2", "Normal_IP_2_R1", "Normal_IP_2_R2", "Normal_IP_3_R1", "Normal_IP_3_R2",
+                  "H2O2_input_1_R1", "H2O2_input_1_R2", "H2O2_input_2_R1", "H2O2_input_2_R2", "H2O2_input_3_R1", "H2O2_input_3_R2",
+                  "H2O2_IP_1_R1", "H2O2_IP_1_R2", "H2O2_IP_2_R1", "H2O2_IP_2_R2", "H2O2_IP_3_R1", "H2O2_IP_3_R2",
+                  "Heat_input_1_R1", "Heat_input_1_R2", "Heat_input_2_R1", "Heat_input_2_R2", "Heat_input_3_R1", "Heat_input_3_R2",
+                  "Heat_IP_1_R1", "Heat_IP_1_R2", "Heat_IP_2_R1", "Heat_IP_2_R2", "Heat_IP_3_R1", "Heat_IP_3_R2",
+                  "Stat_input_1_R1", "Stat_input_1_R2", "Stat_input_2_R1", "Stat_input_2_R2", "Stat_input_3_R1", "Stat_input_3_R2",
+                  "Stat_IP_1_R1", "Stat_IP_1_R2", "Stat_IP_2_R1", "Stat_IP_2_R2", "Stat_IP_3_R1", "Stat_IP_3_R2",
+                  "yAS99_1_R1", "yAS99_1_R2", "yAS99_2_R1", "yAS99_2_R2", "yAS99_3_R1", "yAS99_3_R2",		  
+                  "yAS113_1_R1", "yAS113_1_R2", "yAS113_2_R1", "yAS113_2_R2", "yAS113_3_R1", "yAS113_3_R2"],
   "path":
   {
     "fastq": "data/references/fastq/",
@@ -63,7 +69,7 @@
     "merged_reads_wo_trna_df": "results/extract_reads_wo_trna_seq/merged_df.tsv",
     "mature_premature_diff": "results/extract_reads/mature_vs_premature.tsv",
     "mature_premature_diff_wo_trna": "results/extract_reads_wo_trna_seq/mature_vs_premature.tsv",
-    "tRNA_unique_sequences": "data/references/tRNA_unique_sequences.csv",
+    "tRNA_unique_sequences": "data/references/tRNA_unique_sequences_s_pombe.csv",
     "extract_fastq_reads": "results/extract_fastq_reads/",
     "extract_read_type": "results/extract_read_type/",
     "ratio_stress_normal": "results/ratio_stress_normal/"
@@ -110,6 +116,8 @@
   {
     "genome": "https://www.pombase.org/data/genome_sequence_and_features/genome_sequence/Schizosaccharomyces_pombe_all_chromosomes.fa.gz",
     "genome_gff": "https://www.pombase.org/data/genome_sequence_and_features/gff3/Schizosaccharomyces_pombe_all_chromosomes.gff3.gz",
-    "coco_git_link": "http://gitlabscottgroup.med.usherbrooke.ca/scott-group/coco.git"
+    "coco_git_link": "http://gitlabscottgroup.med.usherbrooke.ca/scott-group/coco.git",
+    "agrep_git_link": "https://github.com/Wikinaut/agrep.git",
+    "tRNA_unique_sequences": "TO_UPDATE"
   }
 }

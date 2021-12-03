@@ -2,6 +2,7 @@ import os
 
 include: "df_formatting.smk"
 include: "ratio_stress_normal.smk"
+include: "fastq_extraction.smk"
 
 rule donut_ratio_biotype:
     """ Create a donut chart per stress condition ratio (relative to the normal
@@ -40,3 +41,31 @@ rule volcano:
         "../envs/python.yaml"
     script:
         "../scripts/figures/volcano.py"
+
+rule heatmap_read_type:
+    """ Create one heatmap per average condition to show the number of reads per
+        read type and tRNA isotype."""
+    input:
+        dfs = rules.average_normalized_tables.output
+    output:
+        heatmap = expand(os.path.join(config['figure']['heatmap'], '{cond}_read_type_per_isotype.svg'), 
+			cond=['Normal_input', 'Normal_IP', 'H2O2_input', 'H2O2_IP', 'Heat_input', 
+				'Heat_IP', 'Stat_input', 'Stat_IP', 'yAS99', 'yAS113'])
+    conda:
+        "../envs/python.yaml"
+    script:
+        "../scripts/figures/heatmap_read_type.py"
+
+rule heatmap_read_type_ratio_ip_input:
+    """ Create one heatmap to show the ratio of number of reads per
+        read type and tRNA isotype between IPs and input average samples."""
+    input:
+        dfs = rules.average_normalized_tables.output
+    output:
+        heatmap = expand(os.path.join(config['figure']['heatmap'], 'read_type_ratio_{cond}.svg'),
+                        cond=['Normal', 'H2O2', 'Heat', 'Stat', 'yAS113_yAS99']) 
+    conda:
+        "../envs/python.yaml"
+    script:
+        "../scripts/figures/heatmap_read_type_ratio_ip_input.py"
+
